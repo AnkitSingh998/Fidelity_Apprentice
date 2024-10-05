@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books</title>
+</head>
+<body>
+    <form>
+    <fieldset>
+        <legend>Customer Info</legend>
+        <label for="name" >Name:</label>
+        <input type="text"id="name"placeholder="Enter your Name" required autofocus>
+        <label for="telephone">Telephone</label>
+        <input type="number"id="telephone"placeholder="Pattern 234-567-8910 req. " pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+        <label for="email"id="email">Email</label>
+        <input type="email" placeholder="Enter ur mail"id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+ </fieldset>
+    <fieldset>
+        <Legend>Books</Legend>
+        <label for="book">Book:</label>
+        <input type="text"id="book" name="book" list="books"placeholder="Choose a book">
+        <datalist id="books">
+            <option value="HTML5-Bruce Lawson and Remy Sharp">
+                <option value="Up and Running">
+                    <option value="Head First and html">
+                        <option value="Mastering HTML,CSS and Javascript">
+                            
+            
+                
+            
+        </datalist>
+    
+        <label for="quantity">Quantity(Max 5)</label>
+        <input type="number"id="quantity" min="1" max="5" required>
+
+
+    </fieldset>
+    <input type="submit"value="Submit" onclick="alert('You have successfully submitted the form')">
+</form>
+<script>
+    document.getElementById('name').autocomplete='on';
+    document.getElementById('telephone').autocomplete='on';
+    document.getElementById('email').autocomplete='on';
+    document.getElementById('books').autocomplete='on';
+</script>
+
+    
+</body>
+</html>

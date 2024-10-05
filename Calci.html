@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        .container
+        {
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+            justify-content:center;
+            min-height:100vh;
+        }
+        #head
+        {
+            color:red;
+            text-align: center;
+        }
+        img{
+            display:block;
+           
+            margin:5px 0;
+        }
+        .input-group
+        {
+            display:flex;
+
+            align-items:center;
+            margin-top:40px 40px;
+        }
+        .input-group label{
+            margin-left:10px;
+            margin-right:10px;
+        }
+       
+        input{
+            margin:5px;
+        }
+        .input-group label,.input-group input,.input-group select{
+            display:block;
+            margin:5px;
+        }
+        .img-bot{
+          display:flex;
+
+        }
+        
+        
+              
+    </style>
+</head>
+<body>
+    <div class="container">
+     <h1 id="head">Calculator</h1>
+     <img src="calci.jpg" height="300" width="400" >
+     <div class="input-group">
+    
+     <label for="number1">Input 1</label>
+     <input type="number"  id="number1">
+     
+
+     </div>
+     <div class="input-group">
+     <label for="number2">Input 2</label>
+     <input type="number" id="number2">
+     
+     </div>
+     <div class="input-group">
+     <label for="operation">Select Operation</label>
+     <select id="operation">
+        <option>Select Operations</option>
+     <option>+</option>
+     <option>-</option>
+     <option>*</option>
+     <option>/</option>
+    </select>
+    </div>
+    <div class="img-bot">
+        <input type="image" src="submit.png" name="submit" height="80" width="80">
+        <input type="image" src="reset.jpg" name="submit" height="80" width="80">
+    </div>
+    </div>
+
+</body>
+</html>

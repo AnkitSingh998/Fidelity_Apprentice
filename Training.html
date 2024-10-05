@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body h1{
+            text-align:center;
+            color:#FF00FF;
+            font-style:italic;
+        }
+       
+        body table{
+            margin-left:35%;
+            background-color:#F0F0F0;
+        }
+        body table thead th{
+            text-align:left;
+        }
+        tbody tr td{
+            text-align:center;
+        }
+        table{
+            width:50%;
+            border-collapse:collapse;
+            margin:20px auto;
+            border-color:white;
+        }
+        th,td{
+            border:1px solid white;
+            padding:10px;
+            
+        }
+        th{
+            background-color:#800000;
+            color:white;
+        }
+        tr:nth-child(odd){
+            background-color:#C11C84;
+        }
+        tr:nth-child(even){
+            background-color:#ADD8EC;
+        }
+    </style>
+</head>
+<body>
+    <h1>Training Feedback Rating Chart</h1>
+    <table>
+        <caption style="caption-side:top;text-align:left;font-style: bold;">Trainer's Name: Alex</caption>
+       
+        <thead>
+            <th>S.NO.</th>
+            <th>Training module name</th>
+            <th>Overall Rating</th>
+            <th>Feedback</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>HTML,CSS,JAVASCRIPT</td>
+                    <td>5</td>
+                    <td style="background-color:#83F284">Excellent</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Basic java program</td>
+                    <td>4</td>
+                    <td style="background-color:#83F284">Very good</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Advance java program</td>
+                    <td>3</td>
+                    <td style="background-color:yellow">Good</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>UNIX</td>
+                    <td>2</td>
+                    <td style="background-color:lightgray">Average</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Python</td>
+                    <td>1</td>
+                    <td style="background-color:lightcoral">Below Average</td>
+                </tr>
+            </tbody>
+    </table>
+</body>
+</html>
