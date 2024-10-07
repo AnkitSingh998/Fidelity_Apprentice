@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function validateForm(event)
+        {
+            event.preventDefault();
+            var form=document.getElementById("acForm");
+            if(form.checkValidity())
+            alert("Submitted Successfully");
+            else{
+                alert("Please fill correctly and everything before moving ahead");
+            }
+
+        }
+        
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            align-items: center;
+
+            height: 100vh;
+            margin: 0;
+
+        }
+
+        table {
+            background-color: #F6B60F;
+            margin-left: 35%;
+            border-spacing: 5px;
+            border-width: 10%;
+            border-style: none;
+            text-align: left;
+            width: 600px;
+            border-collapse: separate;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 6px;
+            color: white;
+            font-size: 15px;
+            cursor: pointer;
+           
+
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+        #head{
+            width:100%;
+            background-color:red;
+            color:white;
+            font-style:italic;
+        }
+       
+
+    </style>
+</head>
+
+<body>
+    <form id="acForm">
+        <table>
+            <tr id="head">
+                <td>AC Maintenance Service</td>
+            </tr>
+            <tr>
+                <td><label for="customer">Customer Name</label></td>
+                <td> <input type="text" id="customer" required></td>
+            </tr>
+            <tr>
+                <td><label for="gender" required>Gender</label></td>
+                <div class="radio-groups">
+                    <td><input type="radio" id="male" name="gender" value="male">Male</td>
+                   
+
+                   
+                   
+                </div>
+                <div class="radio-groups">
+                    <td><input type="radio" id="female" name="gender" value="female"></td>
+                    <td><label for="female">Female</label>
+                </div>
+            </tr>
+            <tr>
+                <td><label for="number">Mobile No.</label></td>
+                <td><input type="text" name="number" pattern="[7-9]{1}[0-9]{9}"title="Phone number with 7-9 and remaing 9 digit with 0-9">
+                   </td>
+            </tr>
+            <tr>
+                <td><label for="email">Email Id</label></td>
+                <td> <input type="email" id="email" required></td>
+
+            </tr>
+            <tr>
+                <td><label for="address">Address</label></td>
+                <td> <textarea name="address"id="address"rows="5"cols="25" required></textarea></td>
+            </tr>
+            <tr>
+                <td><label for="acType">Ac Type</label></td>
+                <td> <input type="text" id="acType"list="acTypes"required></td>
+                <datalist id="acTypes">
+                    <option value="split">
+                    <option value="window">
+                    <option value="centalised">
+                    <option value="portable">
+
+
+
+
+                </datalist>
+                <span id="acType-error"class="error"></span>
+            </tr>
+            <tr>
+                <td><label for="servicetype">ServiceType</label></td>
+                <td><select name="service" id="servicetype" required>
+                        <option value="cleaning">Cleaning</option>
+                        <option value="repair">Repair</option>
+                        <option value="gassrefill">Gassrefill</option>
+                </td>
+
+                </select>
+            </tr>
+            <tr>
+                <td><label for="date">Date of Appointment </label></td>
+                <td> <input type="date" id="date" required></td>
+            </tr>
+            <tr>
+                <td><label for="yearly">Yearly Maintanence</label></td>
+                <td> <input type="checkbox" id="yearly" required> Required or not</td>
+            </tr>
+            <tr>
+                <td><label for="duration">Duration in months from previous service</label></td>
+                <td><input type="range" id="duration" name="points" min="1" max="6"></td>
+            </tr>
+            <tr>
+                <td><button type="submit" onClick="validateForm(event)">Submit</button></td>
+                <td><button type="submit">Clear</button></td>
+            </tr>
+
+
+
+
+
+
+        </table>
+        </form>
+        <script>
+            document.getElementById('actypes').autocomplete='on';
+        </script>
+       
+           
+            
+       
+</body>
+
+</html>
