@@ -1,71 +1,72 @@
+import java.util.Scanner;
+
 public class LinkedList {
-    private Node head;
-    private Node tail;
-    private int size;
-    LinkedList() {
-        head=tail=null;
-        size=0;
+  Node head;
+
+    class Node {
+        int data;
+        Node next;
+
+        Node(int data) {
+            this.data = data;
+            next = null;
+        }
+
     }
-    public void addFirst(int data) {
+    public void insert(int data) {
         Node newNode = new Node(data);
         newNode.next = head;
-        head = newNode;
-        if(size==0) {
-            tail=newNode;
+        head=newNode;
+
+    }
+    public void display() {
+        Node current = head;
+        while(current != null) {
+            System.out.println(current.data+" ");
+            current = current.next;
         }
-        size++;
-    }
-    public void addLast(int data) {
-        Node newNode = new Node(data);
-        if(size==0) {
-            head=tail=newNode;
-        }
-        tail.next=newNode;
-        tail=newNode;
-        size++;
-    }
-    public void addAt(int index, int data) {
-        Node temp=head;
-        for(int i=0;i<=index-1;i++) {
-            temp=temp.next;
-        }
-        Node newNode = new Node(data);
-        newNode.next = temp.next;
-        temp.next=newNode;
-        size++;
-    }
-    public int getFirst() {
-        return head.data;
-    }
-    public int getLast() {
-        return tail.data;
-    }
-    public void removeFirst() {
-        head=head.next;
-        size--;
-    }
-    public void removeLast() {
-        Node temp=head;
-        while(temp.next!=null) {
-            temp=temp.next;
-        }
-        temp.next=null;
-        size--;
     }
     public void removeAt(int index) {
-        Node temp=head;
-        for(int i=0;i<=index-1;i++) {
-            temp=temp.next;
+        if(head==null){
+            System.out.println("List is empty");
+            return;
         }
-        temp.next=temp.next.next;
-        size--;
-    }
+        if(index==0){
+            head=head.next;
+            return;
+        }
+        Node current = head;
+        for(int i=0; i<index-1; i++) {
+            current = current.next;
+        }
+        if(current==null || current.next==null)
+        {
+            System.out.println("List is empty");
+            return;
 
-    public void display() {
-        Node temp=head;
-        while(temp!=null) {
-            System.out.print(temp.data+" ");
-            temp=temp.next;
         }
+        Node next=current.next.next;
+        current.next=next;
+
+
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        LinkedList list  = new LinkedList();
+        int size=4;
+        for(int i=0; i<size; i++) {
+            System.out.print("Enter data: ");
+            int data=sc.nextInt();
+            list.insert(data);
+        }
+        System.out.println("Original list");
+        list.display();
+        System.out.println("Enter index at which you want to remove");
+        int i=sc.nextInt();
+        list.removeAt(i);
+        System.out.println("After removing "+i+" element");
+        list.display();
+
+
     }
 }
